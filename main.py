@@ -27,20 +27,20 @@ password = Label(text="Password:", bg="white")
 password.grid(column=0, row=3)
 
 #Entry
-input_website = Entry(width=35)
+input_website = Entry(width=50)
 input_website.grid(column=1, row=1, columnspan=2)
 
-input_email = Entry(width=35)
+input_email = Entry(width=50)
 input_email.grid(column=1, row=2, columnspan=2)
 
-input_password = Entry(width=21)
+input_password = Entry(width=32)
 input_password.grid(column=1, row=3)
 
 # buttons
 generate_button = Button(text="Generate Password")
 generate_button.grid(column=2, row=3)
 
-add_button = Button(text="Add", width=36)
+add_button = Button(text="Add", width=43)
 add_button.grid(column=1, row=4, columnspan=2)
 
 # r = Label(bg="red", width=20, height=5)
