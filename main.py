@@ -1,4 +1,8 @@
 from tkinter import *
+
+# enter your personal email
+MY_EMAIL = "nirgalili1@gmail.com"
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 
@@ -15,13 +19,8 @@ def press_add():
     # clear field in UI
 
     input_website.delete(0, END)
-    input_website.insert(0, "")
-
-    input_email.delete(0, END)
-    input_email.insert(0, "")
-
     input_password.delete(0, END)
-    input_password.insert(0, "")
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -54,7 +53,7 @@ input_website.focus()
 
 input_email = Entry(width=51)
 input_email.grid(column=1, row=2, columnspan=2)
-input_email.insert(0, string="MyEmail@host.com")
+input_email.insert(0, string=MY_EMAIL)
 
 input_password = Entry(width=32)
 input_password.grid(column=1, row=3)
