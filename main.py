@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 # enter your personal email
 MY_EMAIL = "nirgalili1@gmail.com"
@@ -9,21 +10,24 @@ MY_EMAIL = "nirgalili1@gmail.com"
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 # function for press add
 def press_add():
-
     # open file data.txt
-
-    with open("data.txt", "a") as file:
-        # add new line to file
-        file.write(f"{input_website.get()} | {input_email.get()} | {input_password.get()}\n")
-
-    # clear field in UI
-
-    input_website.delete(0, END)
-    input_password.delete(0, END)
-
-
-
+    website = input_website.get()
+    email = input_email.get()
+    password = input_password.get()
+    if len(website) == 0 or len(email) == 0 or len(password) == 0:
+        messagebox.showinfo(title="Oops", message="Please don't leave any field empty!")
+    else:
+        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \nEmail: {email}"
+                                                     f"\nPassword: {password} \nIs it ok to save?")
+        if is_ok:
+            with open("data.txt", "a") as file:
+                # add new line to file
+                file.write(f"{website} | {email} | {password}\n")
+            # clear field in UI
+            input_website.delete(0, END)
+            input_password.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
+
 
 # window
 window = Tk()
